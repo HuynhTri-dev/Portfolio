@@ -10,15 +10,6 @@ import EducationSection from "../components/sections/EduAndActiSection";
 import Footer from "../components/common/layout/Footer";
 
 export default function CVPage() {
-  const sections = [
-    "home",
-    "about",
-    "skills",
-    "projects",
-    "educationAndActivities",
-    "contact",
-  ];
-
   const [activeSection, setActiveSection] = useState("about");
 
   useEffect(() => {
