@@ -18,9 +18,12 @@ export default function CVPage() {
     "educationAndActivities",
     "contact",
   ];
-  // const activeSection = useActiveSection(sections);
 
   const [activeSection, setActiveSection] = useState("about");
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, [activeSection]);
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 via-blue-900 to-gray-800 text-white">
