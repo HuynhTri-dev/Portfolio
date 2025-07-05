@@ -67,7 +67,7 @@ const Character: FC<CharacterProps> = ({ modelPath }) => {
 
 const Character3D: FC = () => {
   return (
-    <div className="w-full h-screen">
+    <div className="w-full h-full md:h-screen">
       <Canvas camera={{ position: [0, 1.5, 3], fov: 45 }}>
         {/* Ánh sáng tối giản */}
         <ambientLight intensity={1} />
