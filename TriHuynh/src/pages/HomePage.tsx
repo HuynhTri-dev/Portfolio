@@ -1,7 +1,6 @@
 import Character3D from "../components/common/ui/3D/Character3D";
 import { motion } from "framer-motion";
 import VisitCard3D from "../components/common/ui/3D/VisitCard3D";
-
 export default function HomePage() {
   return (
     <div className="relative w-full h-screen overflow-hidden bg-gradient-to-br from-gray-100 via-gray-300 to-gray-100">
@@ -38,8 +37,26 @@ export default function HomePage() {
         </div>
       </motion.div>
 
-      <div className="absolute top-0 right-0 h-full flex items-center z-20 pointer-events-none w-[500px] md:w-[500px]">
-        <div className="p-8 pointer-events-auto w-full h-[500px]">
+      {/* Overlay phải */}
+      <div className="absolute top-0 right-0 h-full grid grid-cols-1 items-center z-20 pointer-events-none p-10 w-[500px]">
+        <div className="flex flex-col items-end space-y-1 pointer-events-none">
+          <a
+            href="/PDF/TriHuynhCV.pdf"
+            download
+            className="inline text-gray-800 text-lg font-medium hover:underline cursor-pointer pointer-events-auto"
+          >
+            Download CV
+          </a>
+
+          <button className="inline text-gray-800 text-lg font-medium hover:underline cursor-pointer pointer-events-auto">
+            Products
+          </button>
+          <button className="inline text-gray-800 text-lg font-medium hover:underline cursor-pointer pointer-events-auto">
+            Contact
+          </button>
+        </div>
+
+        <div className="pointer-events-auto w-full h-full">
           <VisitCard3D />
         </div>
       </div>

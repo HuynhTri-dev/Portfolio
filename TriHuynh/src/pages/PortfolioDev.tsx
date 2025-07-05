@@ -9,7 +9,7 @@ import ProjectSection from "../components/sections/ProjectSection";
 import EducationSection from "../components/sections/EduAndActiSection";
 import Footer from "../components/common/layout/Footer";
 
-export default function CVPage() {
+export default function PortfolioDev() {
   const [activeSection, setActiveSection] = useState("about");
 
   useEffect(() => {

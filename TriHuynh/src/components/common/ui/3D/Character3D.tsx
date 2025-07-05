@@ -1,7 +1,7 @@
 import type { FC } from "react";
 import { Suspense, useEffect, useRef } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
-import { OrbitControls, Stage, useGLTF } from "@react-three/drei";
+import { Stage, useGLTF } from "@react-three/drei";
 import * as THREE from "three";
 
 interface CharacterProps {
