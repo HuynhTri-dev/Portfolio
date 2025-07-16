@@ -9,10 +9,10 @@ import {
   MapPin,
   Phone,
 } from "lucide-react";
-import LinkBlue from "../ui/link/LinkBlue";
-import YellowLink from "../ui/link/YellowLink";
+import LinkBlue from "../../ui/link/LinkBlue";
+import YellowLink from "../../ui/link/YellowLink";
 
-import avatarUrl from "../../../assets/avatar.jpg";
+import avatarUrl from "../../../../assets/avatar.jpg";
 
 export default function Hero() {
   const fullText = "Back-End Developer";

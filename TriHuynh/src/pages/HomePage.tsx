@@ -2,6 +2,7 @@ import Character3D from "../components/common/ui/3D/Character3D";
 import { motion } from "framer-motion";
 import VisitCard3D from "../components/common/ui/3D/VisitCard3D";
 import { useEffect, useState } from "react";
+import Menu from "../components/common/layout/home/Menu";
 export default function HomePage() {
   const [isMobile, setIsMobile] = useState(false);
 
@@ -53,21 +54,8 @@ export default function HomePage() {
 
           {/* Overlay phải */}
           <div className="absolute top-0 right-0 h-full grid grid-cols-1 items-center z-20 pointer-events-none p-10 w-[300px] md:w-[400px] lg:w-[500px]">
-            <div className="flex flex-col items-end space-y-1 pointer-events-none">
-              <a
-                href="/PDF/TriHuynhCV.pdf"
-                download
-                className="inline text-gray-800 text-lg font-medium hover:underline cursor-pointer pointer-events-auto"
-              >
-                Download CV
-              </a>
-
-              <button className="inline text-gray-800 text-lg font-medium hover:underline cursor-pointer pointer-events-auto">
-                Products
-              </button>
-              <button className="inline text-gray-800 text-lg font-medium hover:underline cursor-pointer pointer-events-auto">
-                Contact
-              </button>
+            <div className="h-[100px]">
+              <Menu />
             </div>
 
             <div className="pointer-events-auto w-full h-full">
@@ -102,11 +90,11 @@ export default function HomePage() {
             {/* Menu */}
             <div className="flex flex-col items-end space-y-1 pointer-events-none">
               <a
-                href="/PDF/TriHuynhCV.pdf"
+                href="/PDF/TriHuynhCV_EnglishVer.pdf"
                 download
                 className="inline text-gray-800 text-sm font-medium hover:underline cursor-pointer pointer-events-auto"
               >
-                Download CV
+                My CV
               </a>
 
               <button className="inline text-gray-800 text-sm font-medium hover:underline cursor-pointer pointer-events-auto">

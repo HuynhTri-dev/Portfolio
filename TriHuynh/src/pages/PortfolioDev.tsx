@@ -1,13 +1,13 @@
 // import { useActiveSection } from "../hooks/useActiveSection";
-import Header from "../components/common/layout/Header";
-import Hero from "../components/common/layout/Hero";
+import Header from "../components/common/layout/dev_portfolio/Header";
+import Hero from "../components/common/layout/dev_portfolio/Hero";
 import { useEffect, useState } from "react";
 
 import AboutSection from "../components/sections/AboutSection";
 import SkillSection from "../components/sections/SkillSection";
 import ProjectSection from "../components/sections/ProjectSection";
 import EducationSection from "../components/sections/EduAndActiSection";
-import Footer from "../components/common/layout/Footer";
+import Footer from "../components/common/layout/dev_portfolio/Footer";
 
 export default function PortfolioDev() {
   const [activeSection, setActiveSection] = useState("about");
