@@ -126,6 +126,11 @@ export default function DonatePage() {
           <p className="text-[var(--dev-accent)] text-lg md:text-xl italic mt-6">
             "Cứu một mạng Dev còn hơn xây bảy tòa tháp Google"
           </p>
+
+          <p className="text-gray-400">
+            Tất cả chỉ là trò đùa trong lúc rảnh rỗi, mong mọi người hoan hỉ và
+            đừng donate thiệt nha :)))
+          </p>
         </div>
       </header>
 
