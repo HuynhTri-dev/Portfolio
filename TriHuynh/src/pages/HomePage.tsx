@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import VisitCard3D from "../components/common/ui/3D/VisitCard3D";
 import { useEffect, useState } from "react";
 import Menu from "../components/common/layout/home/Menu";
+import { Link } from "react-router-dom";
 export default function HomePage() {
   const [isMobile, setIsMobile] = useState(false);
 
@@ -100,6 +101,9 @@ export default function HomePage() {
               <button className="inline text-gray-800 text-sm font-medium hover:underline cursor-pointer pointer-events-auto">
                 Products
               </button>
+              <Link to="/donate" className="inline text-gray-800 text-sm font-medium hover:underline cursor-pointer pointer-events-auto">
+                Donate
+              </Link>
               <button className="inline text-gray-800 text-sm font-medium hover:underline cursor-pointer pointer-events-auto">
                 Contact
               </button>

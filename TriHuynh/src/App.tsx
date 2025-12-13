@@ -6,12 +6,15 @@ import ScrollToTop from "./components/common/ScrollToTop";
 import PortfolioInvest from "./pages/PortifolioInvest";
 import PortfolioFounder from "./pages/PortfolioFounder";
 
+import DonatePage from "./pages/DonatePage";
+
 function App() {
   return (
     <>
       <ScrollToTop />
       <Routes>
         <Route path="/" element={<HomePage />} />
+        <Route path="/donate" element={<DonatePage />} />
         <Route path="/portfolio-dev" element={<PortfolioDev />} />
         <Route path="/portfolio-invest" element={<PortfolioInvest />} />
         <Route path="/portfolio-founder" element={<PortfolioFounder />} />

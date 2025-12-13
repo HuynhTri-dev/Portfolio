@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quỹ Bảo Tồn Dev | Cứu Lấy Một Mạng Code</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0F172A;
+            --primary-color: #10B981;
+            /* Xanh terminal */
+            --accent-color: #F59E0B;
+            /* Vàng cảnh báo */
+            --text-color: #E2E8F0;
+            --danger-color: #F43F5E;
+            /* Đỏ kêu gọi */
+            --card-bg: #1E293B;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: 'Fira Code', monospace;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Utility */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .highlight {
+            color: var(--primary-color);
+        }
+
+        .warning {
+            color: var(--accent-color);
+        }
+
+        .urgent {
+            color: var(--danger-color);
+            font-weight: bold;
+        }
+
+        /* Header */
+        header {
+            text-align: center;
+            padding: 60px 20px;
+            border-bottom: 2px dashed var(--primary-color);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .typing-cursor::after {
+            content: '|';
+            animation: blink 1s step-start infinite;
+        }
+
+        @keyframes blink {
+            50% {
+                opacity: 0;
+            }
+        }
+
+        /* Section Styling */
+        section {
+            padding: 40px 0;
+            border-bottom: 1px solid #334155;
+        }
+
+        h2 {
+            border-left: 5px solid var(--accent-color);
+            padding-left: 15px;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        /* Profile Card - Terminal Style */
+        .terminal-window {
+            background: #000;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            overflow: hidden;
+            font-size: 0.9rem;
+        }
+
+        .terminal-header {
+            background: #334155;
+            padding: 10px;
+            display: flex;
+            gap: 8px;
+        }
+
+        .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+
+        .red {
+            background: #ff5f56;
+        }
+
+        .yellow {
+            background: #ffbd2e;
+        }
+
+        .green {
+            background: #27c93f;
+        }
+
+        .terminal-body {
+            padding: 20px;
+            color: #00ff00;
+            /* Màu xanh lá truyền thống */
+        }
+
+        /* Biểu đồ tròn dùng CSS */
+        .chart-container {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            gap: 40px;
+        }
+
+        .pie-chart {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: conic-gradient(var(--accent-color) 0% 50%,
+                    /* Cà phê */
+                    var(--primary-color) 50% 80%,
+                    /* Đồ công nghệ */
+                    #3B82F6 80% 99%,
+                    /* Học hành */
+                    #EF4444 99% 100%
+                    /* Mì tôm */
+                );
+            border: 5px solid var(--card-bg);
+        }
+
+        .legend ul {
+            list-style: none;
+        }
+
+        .legend li {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        .color-box {
+            width: 20px;
+            height: 20px;
+            display: inline-block;
+            margin-right: 10px;
+            border-radius: 4px;
+        }
+
+        /* Donation Packages */
+        .packages {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            padding: 25px;
+            border-radius: 15px;
+            border: 1px solid #334155;
+            transition: transform 0.3s ease;
+            position: relative;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary-color);
+        }
+
+        .price {
+            font-size: 2rem;
+            color: var(--accent-color);
+            margin: 15px 0;
+            font-weight: bold;
+        }
+
+        .btn-donate {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            background: var(--danger-color);
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 8px;
+            margin-top: 20px;
+            font-weight: bold;
+            transition: background 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-donate:hover {
+            background: #e11d48;
+            box-shadow: 0 0 15px var(--danger-color);
+        }
+
+        /* QR Code Section */
+        .qr-section {
+            text-align: center;
+            background: #1e293b;
+            padding: 30px;
+            border-radius: 20px;
+            margin-top: 40px;
+        }
+
+        .qr-img {
+            max-width: 250px;
+            border: 10px solid white;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 40px;
+            font-size: 0.8rem;
+            color: #94a3b8;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            .chart-container {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="container">
+            <div style="font-size: 3rem; margin-bottom: 10px;">☕ 💻 🆘</div>
+            <h1 class="highlight">QUỸ BẢO TỒN DEV <br><span class="typing-cursor">SẮP TUYỆT CHỦNG</span></h1>
+            <p class="warning">"Cứu một mạng Dev còn hơn xây bảy tòa tháp Google"</p>
+        </div>
+    </header>
+
+    <div class="container">
+
+        <section id="bio">
+            <h2>>_ sudo cat benh_an.txt</h2>
+            <div class="terminal-window">
+                <div class="terminal-header">
+                    <div class="dot red"></div>
+                    <div class="dot yellow"></div>
+                    <div class="dot green"></div>
+                </div>
+                <div class="terminal-body">
+                    <p>> <strong>Subject:</strong> Full-stack Developer (Stack gì cũng biết, trừ tiền).</p>
+                    <p>> <strong>Status:</strong> <span class="urgent">CRITICAL LOW BATTERY</span></p>
+                    <p>> <strong>Triệu chứng:</strong></p>
+                    <ul style="margin-left: 20px; margin-bottom: 15px;">
+                        <li>- Đau lưng mãn tính (Senior Back Pain)</li>
+                        <li>- Mắt thâm quầng (Panda Eye Mode)</li>
+                        <li>- Nồng độ Caffein trong máu > 90%</li>
+                    </ul>
+                    <p>> <strong>Tài sản hiện có:</strong> 01 Laptop quạt kêu như trực thăng, 01 bàn phím mất nút Enter.
+                    </p>
+                    <br>
+                    <p>> <span class="highlight">System Alert:</span> Cần nạp tiền ngay lập tức để duy trì server chạy
+                        bằng cơm này.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="plan">
+            <h2>>_ git status (Tiền đi về đâu?)</h2>
+            <div class="chart-container">
+                <div class="pie-chart"></div>
+                <div class="legend">
+                    <ul>
+                        <li><span class="color-box" style="background: var(--accent-color)"></span> 50%: Cà phê /
+                            Monster / Bò húc</li>
+                        <li><span class="color-box" style="background: var(--primary-color)"></span> 30%: Mua đồ công
+                            nghệ (Phím cơ, Chuột, RAM)</li>
+                        <li><span class="color-box" style="background: #3B82F6"></span> 19%: Mua khóa học (Cam kết sẽ
+                            học... bài đầu)</li>
+                        <li><span class="color-box" style="background: #EF4444"></span> 1%: Mì tôm (Dự phòng khẩn cấp)
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <blockquote
+                style="margin-top: 30px; font-style: italic; border-left: 3px solid var(--text-color); padding-left: 15px;">
+                "Cam kết sao kê đầy đủ từng hạt đường trong ly cà phê... <span class="urgent">NẾU RẢNH</span>. (Lưu ý:
+                Dev rất ít khi rảnh vì bận fix bug)."
+            </blockquote>
+        </section>
+
+        <section id="donate">
+            <h2>>_ npm install donate</h2>
+            <div class="packages">
+                <div class="card">
+                    <h3>☕ Junior Support</h3>
+                    <div class="price">20k - 50k</div>
+                    <p>Giúp Dev tỉnh táo thêm 2 giờ. Bạn nhận được một lời cảm ơn thầm lặng trong git commit log.</p>
+                    <button class="btn-donate" onclick="thongBao('Junior')">Mời Ly Cà Phê</button>
+                </div>
+
+                <div class="card">
+                    <div
+                        style="position: absolute; top: -10px; right: -10px; background: var(--accent-color); color: #000; padding: 5px 10px; border-radius: 5px; font-weight: bold; font-size: 0.8rem;">
+                        Best Seller</div>
+                    <h3>⌨️ Senior Sponsor</h3>
+                    <div class="price">100k - 200k</div>
+                    <p>Đóng góp quỹ mua Switch bàn phím. Giúp Dev gõ code nhanh hơn, fix bug lẹ hơn (hy vọng thế).</p>
+                    <button class="btn-donate" onclick="thongBao('Senior')">Tài Trợ Bàn Phím</button>
+                </div>
+
+                <div class="card">
+                    <h3>🚀 Angel Investor</h3>
+                    <div class="price">500k ++</div>
+                    <p>Bạn là ánh sáng của Đảng! Số tiền này dùng để mua tên miền hoặc trả tiền AWS lỡ quên tắt
+                        instance.</p>
+                    <button class="btn-donate" onclick="thongBao('Boss')">Nuôi Luôn Dev</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="qr-section">
+            <h2 style="border:none; margin-bottom: 10px;">QUÉT NGAY TÍCH ĐỨC 4.0</h2>
+            <p>Mọi giao dịch đều được encrypt bằng lòng biết ơn vô hạn.</p>
+
+            <img src="https://via.placeholder.com/250x250?text=QR+Code+Cua+Ban" alt="QR Code Momo/Bank" class="qr-img">
+
+            <p class="urgent">Nội dung CK: "Cuu Dev + Lời nhắn nhủ"</p>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>Website này được code bằng mồ hôi, nước mắt và rất nhiều StackOverflow.</p>
+        <p>&copy; 2025 Một Dev Nghèo. All bugs reserved.</p>
+    </footer>
+
+    <script>
+        // Script cợt nhả
+        function thongBao(goi) {
+            let messages = [
+                "Đang kết nối tới ví của bạn...",
+                "Đang tải nhân phẩm...",
+                "Phát hiện đại gia! Đang mở app ngân hàng...",
+                "Cảm ơn sếp! Bug tự nhiên biến mất!"
+            ];
+
+            alert(messages[Math.floor(Math.random() * messages.length)] + "\n(Vui lòng quét QR ở dưới để hoàn tất quy trình nuôi dev)");
+
+            // Cuộn xuống phần QR
+            document.querySelector('.qr-section').scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+
+        // Console log cho dân Tech xem
+        console.log("%cDừng lại!", "color: red; font-size: 30px; font-weight: bold;");
+        console.log("%cNếu bạn đang đọc cái này, bạn cũng là Dev đúng không? Donate đi bạn êi!", "font-size: 16px;");
+    </script>
+</body>
+
+</html>

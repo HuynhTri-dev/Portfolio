@@ -1,5 +1,6 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 export default function Menu() {
   const [showLinks, setShowLinks] = useState(false);
@@ -48,6 +49,9 @@ export default function Menu() {
       <button className="inline text-gray-800 text-lg font-medium hover:underline cursor-pointer pointer-events-auto">
         Products
       </button>
+      <Link to="/donate" className="inline text-gray-800 text-lg font-medium hover:underline cursor-pointer pointer-events-auto">
+        Donate
+      </Link>
       <button className="inline text-gray-800 text-lg font-medium hover:underline cursor-pointer pointer-events-auto">
         Contact
       </button>

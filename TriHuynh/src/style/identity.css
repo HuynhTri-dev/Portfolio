@@ -1,0 +1,11 @@
+:root {
+    --dev-bg: #0F172A;
+    --dev-primary: #10B981;
+    /* Terminal Green */
+    --dev-accent: #F59E0B;
+    /* Warning Yellow */
+    --dev-text: #E2E8F0;
+    --dev-danger: #F43F5E;
+    /* Call to Action Red */
+    --dev-card-bg: #1E293B;
+}
