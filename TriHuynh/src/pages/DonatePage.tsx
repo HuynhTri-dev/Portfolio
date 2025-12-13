@@ -32,6 +32,7 @@ export default function DonatePage() {
 
   const handleDonate = (level: string) => {
     const messages = [
+      `Đang xử lý gói ${level}...`,
       "Đang kết nối tới ví của bạn...",
       "Đang tải nhân phẩm...",
       "Phát hiện đại gia! Đang mở app ngân hàng...",
@@ -113,7 +114,7 @@ export default function DonatePage() {
                 transition={{
                   duration: 0.8,
                   repeat: Infinity,
-                  ease: "steps(2)",
+                  ease: "linear",
                 }}
                 className="absolute -right-6 md:-right-8 top-0 text-[var(--dev-danger)]"
               >
