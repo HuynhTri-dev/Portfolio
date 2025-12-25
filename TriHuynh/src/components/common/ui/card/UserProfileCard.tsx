@@ -62,11 +62,11 @@ export default function UserProfileCard({ className }: { className?: string }) {
               <div className="flex flex-wrap gap-4 text-gray-600 font-medium">
                 <div className="flex items-center gap-2">
                   <Phone size={18} className="text-secondary" />
-                  <span>038 300 5844</span>
+                  <span>098 2294 937</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Mail size={18} className="text-secondary" />
-                  <span>huynhminhtri.dev@gmail.com</span>
+                  <span>huynhminhtri1109@gmail.com</span>
                 </div>
               </div>
             </div>
