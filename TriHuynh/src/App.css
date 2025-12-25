@@ -1,5 +1,6 @@
 @import "tailwindcss";
 @import "./style/identity.css";
+@import "./style/dev.css";
 
 * {
   font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,

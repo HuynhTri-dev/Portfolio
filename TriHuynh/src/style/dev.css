@@ -1,0 +1,16 @@
+@theme {
+  /* Primary (Màu chủ đạo): Classic Sea Blue */
+  --color-primary: #076585;
+
+  /* Secondary (Màu phụ): Cyan Blue */
+  --color-secondary: #8ecae6;
+
+  /* Background (Nền): Xám bạc cực nhẹ */
+  --color-background: #f8f9fa;
+
+  /* Surface (Bề mặt Card): Trắng */
+  --color-surface: #ffffff;
+
+  /* Shadow Color: Màu bóng */
+  --color-card-shadow: #c0c0c0;
+}

@@ -54,12 +54,12 @@ export default function HomePage() {
           </motion.div>
 
           {/* Overlay phải */}
-          <div className="absolute top-0 right-0 h-full grid grid-cols-1 items-center z-20 pointer-events-none p-10 w-[300px] md:w-[400px] lg:w-[500px]">
-            <div className="h-[100px]">
+          <div className="absolute top-0 right-0 h-full grid grid-cols-1 grid-rows-[auto_1fr] z-20 pointer-events-none p-10 w-[300px] md:w-[400px] lg:w-[500px]">
+            <div className="h-[100px] relative z-50">
               <Menu />
             </div>
 
-            <div className="pointer-events-auto w-full h-full">
+            <div className="pointer-events-auto w-full h-full relative z-10">
               <VisitCard3D />
             </div>
           </div>
@@ -78,7 +78,7 @@ export default function HomePage() {
 
               <div className="">
                 <p className="text-sm text-gray-700 font-medium tracking-wide">
-                  Full Stack Developer
+                  Frontend Developer & UX/UI Design
                 </p>
                 <div className="w-8 h-[2px] bg-gray-400/40 rounded mx-auto"></div>
                 <p className="text-sm text-gray-600 italic text-right">
@@ -101,7 +101,10 @@ export default function HomePage() {
               <button className="inline text-gray-800 text-sm font-medium hover:underline cursor-pointer pointer-events-auto">
                 Products
               </button>
-              <Link to="/donate" className="inline text-gray-800 text-sm font-medium hover:underline cursor-pointer pointer-events-auto">
+              <Link
+                to="/donate"
+                className="inline text-gray-800 text-sm font-medium hover:underline cursor-pointer pointer-events-auto"
+              >
                 Donate
               </Link>
               <button className="inline text-gray-800 text-sm font-medium hover:underline cursor-pointer pointer-events-auto">
